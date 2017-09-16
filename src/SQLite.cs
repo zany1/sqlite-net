@@ -1663,7 +1663,10 @@ namespace SQLite
 			if (count > 0)
 				OnTableChanged (map, NotifyTableChangedAction.Insert);
 
-			return count;
+			//Updated lines
+    		//return count; //count is row affected, id is primary key
+   		 	return (int)id;
+  	    	//Updated lines
 		}
 
 		readonly Dictionary<Tuple<string, string>, PreparedSqlLiteInsertCommand> _insertCommandMap = new Dictionary<Tuple<string, string>, PreparedSqlLiteInsertCommand> ();
